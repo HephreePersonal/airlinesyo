@@ -27,3 +27,14 @@ php -S localhost:8000 -t public
 ```
 
 The site will then be available at [http://localhost:8000/](http://localhost:8000/).
+
+## Database setup
+
+Run the SQL script located at `database/schema.sql` to create the required tables:
+
+```bash
+mysql -u your_user -p your_database < database/schema.sql
+```
+
+This must be executed before using `public/add_flight.php` so the `flights` table exists.
+
