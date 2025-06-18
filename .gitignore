@@ -1,0 +1,19 @@
+# Dependency directory
+/vendor/
+
+# Local database configuration
+/config/database.php
+
+# Editor and OS files
+*.log
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+.DS_Store
+Thumbs.db
+
+# IDE directories
+.idea/
+.vscode/
