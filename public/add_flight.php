@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use App\Database\DatabaseConnection;
+use App\Database\FlightRepository;
 
 $message = null;
 
@@ -11,15 +11,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $destination = $_POST['destination'] ?? '';
     $flight_date = $_POST['flight_date'] ?? '';
 
+    $repository = new FlightRepository();
+
     try {
-        $db = DatabaseConnection::getInstance()->getConnection();
-        $stmt = $db->prepare('INSERT INTO flights (flight_number, origin, destination, flight_date) VALUES (:flight_number, :origin, :destination, :flight_date)');
-        $stmt->execute([
-            ':flight_number' => $flight_number,
-            ':origin' => $origin,
-            ':destination' => $destination,
-            ':flight_date' => $flight_date
+        $repository->addFlight([
+            'flight_number' => $flight_number,
+            'origin'        => $origin,
+            'destination'   => $destination,
+            'flight_date'   => $flight_date,
         ]);
+
         $message = 'Flight added successfully!';
     } catch (\PDOException $e) {
         $message = 'Error: ' . $e->getMessage();
