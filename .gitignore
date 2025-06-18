@@ -1,0 +1,30 @@
+# IDE files
+.idea/
+.vscode/
+
+# Composer
+/vendor/
+composer.phar
+
+# Environment files
+.env
+.env.local
+
+# Config files containing sensitive data
+/config/database.php
+/config/*.local.php
+
+# Cache and logs
+/var/
+/log/
+*.log
+*.cache
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

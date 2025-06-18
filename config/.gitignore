@@ -1,0 +1,6 @@
+# Ignore actual database configuration
+database.php
+# Ignore any local configuration files
+*.local.php
+# But allow template files
+!*.template.php

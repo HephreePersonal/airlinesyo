@@ -1,0 +1,13 @@
+{
+    "name": "hephree/airlinesyo",
+    "description": "A Project about Airlines",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4"
+    }
+}
